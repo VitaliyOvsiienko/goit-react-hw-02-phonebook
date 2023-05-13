@@ -1,6 +1,6 @@
 import { Component } from "react";
-import { nanoid } from "nanoid";
-import { Container, Title, SubTitle } from "./App.styled";
+// import { nanoid } from "nanoid";
+// import { Container, Title, SubTitle } from "./App.styled";
 
 
 
@@ -36,24 +36,24 @@ export class App extends Component {
 // };
 
 
-onSubmitHandler = (newContact) => {
-  const { contacts } = this.state;
+// onSubmitHandler = (newContact) => {
+//   const { contacts } = this.state;
 
-  const isDuplicateName = contacts.some(contact => contact.name.toLowerCase() === newContact.name.toLowerCase()
-  );
+//   const isDuplicateName = contacts.some(contact => contact.name.toLowerCase() === newContact.name.toLowerCase()
+//   );
 
-  if (isDuplicateName) {
-    return alert(`${newContact.name} is already in contacts`);
-  };
+//   if (isDuplicateName) {
+//     return alert(`${newContact.name} is already in contacts`);
+//   };
 
-  const newContactId = nanoid();
+//   const newContactId = nanoid();
 
-  const updatedContacts = [...contacts, { ...newContact, id: newContactId }];
-  this.setState({
-    contacts: updatedContacts
-  });
+//   const updatedContacts = [...contacts, { ...newContact, id: newContactId }];
+//   this.setState({
+//     contacts: updatedContacts
+//   });
 
-};
+// };
 
 //  deleteContact = (contactId) => {
 //     this.setState((prev) => ({
@@ -62,11 +62,11 @@ onSubmitHandler = (newContact) => {
 //   };
 
 
-onDeleteHandler = (id) => {
-  this.setState((prev) => ({
-    contacts: prev.contacts.filter(contact => contact.id !== id)
-  }))
-}
+// onDeleteHandler = (id) => {
+//   this.setState((prev) => ({
+//     contacts: prev.contacts.filter(contact => contact.id !== id)
+//   }))
+// }
 
 
 
