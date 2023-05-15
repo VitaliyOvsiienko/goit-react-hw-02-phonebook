@@ -1,6 +1,6 @@
 import { Component } from "react";
 import { nanoid } from "nanoid";
-import { Container, Title, SubTitle } from "./App.styled";
+import { Frame, Container, Title, SubTitle } from "./App.styled";
 import { ContactForm } from "./ContactForm/ContactForm";
 import { ContactList } from "./ContactList/ContactList";
 import { Filter } from "./Filter/Filter";
@@ -59,12 +59,14 @@ export class App extends Component {
 
     return (
       <Container>
-        <Title>Phonebook</Title>
+        <Frame>
+          <Title>Phonebook</Title>
         <ContactForm onSubmit={this.onSubmitHandler} />
 
         <SubTitle>Contacts</SubTitle>
         <Filter value={filter} onChange={this.onFilterContacts} />
         <ContactList contacts={filterContacts} onDeleteContact={this.onDeleteHandler} />
+        </Frame>
       </Container>
     );
   }

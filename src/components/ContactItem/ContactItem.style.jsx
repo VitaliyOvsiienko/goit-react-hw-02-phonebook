@@ -4,35 +4,35 @@ export const Item = styled.li`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 0px;
+    padding: 5px 0;
 `;
 
 export const Text = styled.p`
-    color: var(--primary-text-color);
+    color: #757575;
     font-size: 20px;
+
     &:first-of-type {
-    font-weight: 500; 
-    color: var(--secondary-text-color);  
+        font-weight: 500;
+        color: #333;
     }
 `;
 
 export const Button = styled.button`
-        min-width: 120px;
-        height: 40px;
+    min-width: 120px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    background-color: #8a4dff;
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+    cursor: pointer;
 
-        border: 1px solid transparent;
-        border-radius: 5px;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-
-        background-color: var(--accent-color);
-        color: var(--primary-white-color);
-        font-weight: 700;
-        font-size: 16px;
-        transition: background-color var(--transition), transform var(--transition);
-
-        &:hover,
-        &:focus {
-        background-color: #188CE8;
+    &:hover,
+    &:focus {
+        background-color: #6e39b8;
         transform: scale(1.04);
     }
-`
+`;
