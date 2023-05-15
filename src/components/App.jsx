@@ -1,68 +1,71 @@
-// import { Component } from "react";
-// import { nanoid } from "nanoid";
-// import { Container, Title, SubTitle } from "./App.styled";
-// import { ContactForm } from "./ContactForm/ContactForm";
+import { Component } from "react";
+import { nanoid } from "nanoid";
+import { Container, Title, SubTitle } from "./App.styled";
+import { ContactForm } from "./ContactForm/ContactForm";
+import { ContactList } from "./ContactList/ContactList";
+import { Filter } from "./Filter/Filter";
 
-// export class App extends Component {
-//   state = {
-//     contacts: [
-//       { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
-//       { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
-//       { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
-//       { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
-//     ],
-//     filter: '',
-//   };
 
-//   onSubmitHandler = (newContact) => {
-//     const { contacts } = this.state;
+export class App extends Component {
+  state = {
+    contacts: [
+      { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
+      { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
+      { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
+      { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
+    ],
+    filter: '',
+  };
 
-//     const isDuplicateName = contacts.some(contact => contact.name.toLowerCase() === newContact.name.toLowerCase());
+  onSubmitHandler = (newContact) => {
+    const { contacts } = this.state;
 
-//     if (isDuplicateName) {
-//       return alert(`${newContact.name} is already in contacts`);
-//     }
+    const isDuplicateName = contacts.some(contact => contact.name.toLowerCase() === newContact.name.toLowerCase());
 
-//     const newContactId = nanoid();
+    if (isDuplicateName) {
+      return alert(`${newContact.name} is already in contacts`);
+    }
 
-//     const updatedContacts = [...contacts, { ...newContact, id: newContactId }];
-//     this.setState({
-//       contacts: updatedContacts
-//     });
-//   };
+    const newContactId = nanoid();
 
-//   onDeleteHandler = (id) => {
-//     this.setState((prev) => ({
-//       contacts: prev.contacts.filter(contact => contact.id !== id),
-//     }));
-//   };
+    const updatedContacts = [...contacts, { ...newContact, id: newContactId }];
+    this.setState({
+      contacts: updatedContacts
+    });
+  };
 
-//   onFilterContacts = () => {
-//     let filterContact = [];
-//     if (this.state.filter) {
-//       filterContact = this.state.contacts.filter((contact) =>
-//         contact.name.includes(this.state.filter) ||
-//         contact.name.toLowerCase().includes(this.state.filter)
-//       );
-//     } else {
-//       return this.state.contacts;
-//     }
-//     return filterContact;
-//   };
+  onDeleteHandler = (id) => {
+    this.setState((prev) => ({
+      contacts: prev.contacts.filter(contact => contact.id !== id),
+    }));
+  };
 
-//   render() {
-//     const { filter } = this.state;
-//     const filterContacts = this.onFilterContacts();
+  onFilterContacts = () => {
+    let filterContact = [];
+    if (this.state.filter) {
+      filterContact = this.state.contacts.filter((contact) =>
+        contact.name.includes(this.state.filter) ||
+        contact.name.toLowerCase().includes(this.state.filter)
+      );
+    } else {
+      return this.state.contacts;
+    }
+    return filterContact;
+  };
 
-//     return (
-//       <Container>
-//         <Title>Phonebook</Title>
-//         <ContactForm onSubmit={this.onSubmitHandler} />
+  render() {
+    const { filter } = this.state;
+    const filterContacts = this.onFilterContacts();
 
-//         <SubTitle>Contacts</SubTitle>
-//         <Filter value={filter} onChange={this.onFilterContacts} />
-//         <ContactList contacts={filterContacts} onDeleteContact={this.onDeleteHandler} />
-//       </Container>
-//     );
-//   }
-// }
+    return (
+      <Container>
+        <Title>Phonebook</Title>
+        <ContactForm onSubmit={this.onSubmitHandler} />
+
+        <SubTitle>Contacts</SubTitle>
+        <Filter value={filter} onChange={this.onFilterContacts} />
+        <ContactList contacts={filterContacts} onDeleteContact={this.onDeleteHandler} />
+      </Container>
+    );
+  }
+}
