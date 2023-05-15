@@ -40,34 +40,29 @@ export class App extends Component {
     }));
   };
 
-  onFilterContacts = () => {
-    let filterContact = [];
-    if (this.state.filter) {
-      filterContact = this.state.contacts.filter((contact) =>
-        contact.name.includes(this.state.filter) ||
-        contact.name.toLowerCase().includes(this.state.filter)
-      );
-    } else {
-      return this.state.contacts;
-    }
-    return filterContact;
+
+  onFilterContacts = (event) => {
+    const filterValue = event.target.value;
+    this.setState({ filter: filterValue });
   };
 
   render() {
     const { filter } = this.state;
-    const filterContacts = this.onFilterContacts();
+    const filteredContacts = this.state.contacts.filter((contact) =>
+      contact.name.toLowerCase().includes(filter.toLowerCase())
+    );
 
     return (
       <Container>
         <Frame>
           <Title>Phonebook</Title>
-        <ContactForm onSubmit={this.onSubmitHandler} />
+          <ContactForm onSubmit={this.onSubmitHandler} />
 
-        <SubTitle>Contacts</SubTitle>
-        <Filter value={filter} onChange={this.onFilterContacts} />
-        <ContactList contacts={filterContacts} onDeleteContact={this.onDeleteHandler} />
+          <SubTitle>Contacts</SubTitle>
+          <Filter value={filter} onChange={this.onFilterContacts} />
+          <ContactList contacts={filteredContacts} onDeleteContact={this.onDeleteHandler} />
         </Frame>
       </Container>
     );
   }
-}
+};

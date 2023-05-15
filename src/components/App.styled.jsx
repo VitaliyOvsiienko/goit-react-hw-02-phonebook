@@ -1,15 +1,5 @@
 import styled from "@emotion/styled";
 
-export const Frame = styled.div`
-  border: 2px solid #8a4dff;
-  border-radius: 10px;
-  padding: 20px;
-  width: fit-content;
-  background-color: #f7f7f7;
-  margin-top: 20px;
-  margin-bottom: 20px;
-`;
-
 export const Container = styled.div`
     display: flex;
     flex-direction: column;
@@ -19,6 +9,16 @@ export const Container = styled.div`
     color: black;
     padding-left: 15px;
     text-align: center;
+`;
+
+export const Frame = styled.div`
+  border: 2px solid #8a4dff;
+  border-radius: 10px;
+  padding: 20px;
+  width: fit-content;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: #F7F7F7;
 `;
 
 export const Title = styled.h1`
