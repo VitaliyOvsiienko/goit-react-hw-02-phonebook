@@ -10,7 +10,8 @@ export const Filter = ({ value, onChange }) => {
                 type="text"
                 name="search"
                 value={value}
-                onChange={onChange}/>
+                onChange={onChange}
+                placeholder='Search contacts...'/>
             </Label>
             
         </>
