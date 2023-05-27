@@ -1,8 +1,8 @@
 import { Component } from "react";
 import { Frame, Container, Title, SubTitle } from "./App.styled";
-import { ContactForm } from "./contactForm";
-import { ContactList } from "./contactList";
-import { Filter } from "./filter";
+import { ContactForm } from "./ContactForm";
+import { ContactList } from "./ContactList";
+import { Filter } from "./Filter";
 import { nanoid } from "nanoid";
 import defaultContacts from '../data/contacts.json'
 
