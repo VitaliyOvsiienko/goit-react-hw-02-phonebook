@@ -59,4 +59,16 @@ export const Button = styled.button`
         background-color: #6e39b8;
         transform: scale(1.01);
     }
+     display: flex;
+    justify-content: center;
+    align-items: center;
+ padding-left: 25px;
+ padding-right: 25px;
+
+
+    svg {
+        width: 25px;
+        height: 25px;
+        margin-left: auto;
+    }
 `;

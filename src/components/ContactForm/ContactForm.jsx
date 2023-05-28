@@ -1,6 +1,7 @@
 import { Component } from "react";
 import PropTypes from 'prop-types'
-import { Form, Label, Input, Button, } from "./ContactForm.styled";
+import { Form, Label, Input, Button } from "./ContactForm.styled";
+import { FaUserPlus } from "react-icons/fa";
 
 
 export class ContactForm extends Component {
@@ -51,7 +52,7 @@ export class ContactForm extends Component {
                         title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
                         required
                     />
-                    <Button type="submit">Add contact</Button>
+                <Button type="submit">Add contact<FaUserPlus /></Button>
                 </Form>
         );
     }

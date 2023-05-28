@@ -18,8 +18,12 @@ export const Text = styled.p`
 `;
 
 export const Button = styled.button`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     min-width: 120px;
     height: 40px;
+    padding: 0 15px;
     border: none;
     border-radius: 5px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);

@@ -7,9 +7,11 @@ export const Label = styled.label`
     font-size: 20px;
     font-weight: 300;
 
+
 `;
 
 export const Input = styled.input`
+position: relative;
 display: block;
 margin-top: 10px;
     width: 430px;
@@ -19,7 +21,6 @@ margin-top: 10px;
     background-color: #fff;
     outline: none;
     padding-left: 15px;
-    /* margin-left: 20px; */
     margin-bottom: 30px;
     font-weight: 500;
     font-size: 18px;
@@ -30,4 +31,3 @@ margin-top: 10px;
         border-color: #8a4dff;
     }
 `;
-

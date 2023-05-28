@@ -4,16 +4,14 @@ import { Label, Input } from './Filter.styled';
 export const Filter = ({ value, onChange }) => {
     return (
         <>
-            <Label htmlFor='search'>
-                Find contacts by name
+            <Label htmlFor='search'>Find contacts by name
                 <Input
                 type="text"
                 name="search"
                 value={value}
                 onChange={onChange}
-                placeholder='Search contacts...'/>
+                placeholder='Search contacts...' />
             </Label>
-            
         </>
     )
 };
